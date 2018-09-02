@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from '@/App.vue'
-
+import router from '@/router'
 //vue resource : Nos permite realizar peticiones http al servidor, similar a axios
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
@@ -95,5 +95,6 @@ new Vue({
   el: '#app',
   render: h => h(App),
   store,
-  i18n
+  i18n,
+  router
 })
