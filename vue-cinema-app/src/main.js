@@ -5,10 +5,10 @@ import router from '@/router'
 import VueResource from 'vue-resource'
 Vue.use(VueResource)
 Vue.http.options.root = 'http://127.0.0.1:3333/api/v1/';
-Vue.http.interceptors.push((request,next) => {
-  request.headers.set('Authorization', `Bearer @{window.localStorage.getItem('_token')}`);
+Vue.http.interceptors.push((request, next) => {
+  request.headers.set('Authorization', `Bearer ${window.localStorage.getItem('_token')}`);
   next();
-})
+});
 //.vue resource
 //vuex
 import Vuex from 'vuex'

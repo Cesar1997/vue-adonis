@@ -131,20 +131,20 @@ module.exports = {
   | routes does have a valid token to execute an action.
   |
   */
-  csrf: {
-    enable: true,
-    methods: ['POST', 'PUT', 'DELETE'],
-    filterUris: [ // le decimos que estas url pueden hacer peticiones externamente 
-      '/api/vl/login',
-      '/api/vl/register',
-      '/api/vl/booking',
-      '/api/vl/profile'
-    ],
-    cookieOptions: {
-      httpOnly: false,
-      sameSite: true,
-      path: '/',
-      maxAge: 7200
-    }
+ csrf: {
+  enable: true,
+  methods: ['POST', 'PUT', 'DELETE'],
+  filterUris: [
+    '/api/v1/login',
+    '/api/v1/register',
+    '/api/v1/booking',
+    '/api/v1/profile'
+  ],
+  cookieOptions: {
+    httpOnly: false,
+    sameSite: true,
+    path: '/',
+    maxAge: 7200
   }
+}
 }

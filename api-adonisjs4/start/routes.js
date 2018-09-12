@@ -14,8 +14,9 @@
 */
 
 const Route = use('Route')
+
 Route.group(() => {
-    Route.post("login","AuthController.login");
+    Route.post('login', 'AuthController.login');
     Route.post("register","AuthController.register");
     Route.put("profile","AuthController.profile").middleware(["auth:jwt"]);
     

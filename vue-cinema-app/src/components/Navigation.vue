@@ -23,7 +23,7 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><router-link to="/login" v-if="!isLogged">{{$t('navigation.login')}}</router-link> </li>
                     <li><router-link to="/register" v-if="!isLogged">{{$t('navigation.register')}}</router-link> </li>
-                    <li><a href="#" @click.prevent="logout()" v-if="!isLogged">{{$t('navigation.logout')}}</a></li>
+                    <li><a href="#" @click.prevent="logout()" v-if="isLogged">{{$t('navigation.logout')}}</a></li>
                 </ul>
 
             </div>

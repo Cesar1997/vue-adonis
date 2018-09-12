@@ -1,5 +1,5 @@
 'use strict'
-const User = User('App/Models/User');
+const User = use('App/Models/User');
 
 class AuthController {
     async login ({request, response, auth}) {
