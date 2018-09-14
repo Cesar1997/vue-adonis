@@ -14,6 +14,7 @@ import authTypes from '@/types/auth';
 import globalTypes from '@/types/global'
 import Login from '@/components/Auth/Login';
 import Register from '@/components/Auth/Register';
+import Cinemas from '@/components/Cinemas/Cinemas'
 
 //.types
 //global Store
@@ -49,6 +50,12 @@ const router = new Router({
                     next();
                 }
             }
+        },
+        {
+            path: '/',
+            name: 'cinemas',
+            component: Cinemas,
+            meta: {Auth : false,title : 'Cines'}
         }
     ]
 })

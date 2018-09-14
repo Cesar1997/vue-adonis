@@ -21,6 +21,7 @@ Vue.use(Blockui);
 //modulos y tipos
   import globalTypes from '@/types/global'
   import AuthModule from  '@/modules/auth'
+  import cinemaModule from '@/modules/cinema'
 
 //.modulos y tipos
 //vee-validate : Nos sirve para manejar los errores en los componetes, o en la extension de vue en firefox o chrome
@@ -70,7 +71,8 @@ export const store = new Vuex.Store({
     }
   },
   modules: {
-    AuthModule
+    AuthModule,
+    cinemaModule
   }
 })
 
