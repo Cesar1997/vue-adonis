@@ -9,7 +9,7 @@ class Cinema extends Model {
     static get updatedAtColumn () {
         return null;
     }
-    movie_showings() {
+    movie_showings () {
         return this.hasMany('App/Models/MovieShowing');
     }
     rooms() {

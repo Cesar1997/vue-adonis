@@ -15,7 +15,7 @@ import globalTypes from '@/types/global'
 import Login from '@/components/Auth/Login';
 import Register from '@/components/Auth/Register';
 import Cinemas from '@/components/Cinemas/Cinemas'
-
+import Movies from '@/components/Movies/Movies';
 //.types
 //global Store
 import {store} from '@/main';
@@ -24,7 +24,7 @@ import {store} from '@/main';
 
 //configurar el router
 const router = new Router({
-    routes :[
+   routes :[
         {
             path: '/login',
             name: 'login',
@@ -56,6 +56,12 @@ const router = new Router({
             name: 'cinemas',
             component: Cinemas,
             meta: {Auth : false,title : 'Cines'}
+        },
+        {
+            path: '/cinema/:id',
+            name: 'cinema',
+            component: Movies,
+            meta: {Auth : false,title : 'Listado de peliculas'}
         }
     ]
 })
@@ -64,7 +70,7 @@ router.beforeEach((to,from,next) => {
     document.title = to.meta.title;
     if(to.meta.Auth && !store.state.AuthModule.logged){
         next({path: '/login'});
-    } else if(store.state.AuthModule.logged) { //seteamos el usuario que esta autenticado en cada peticion 
+    } else if(store.state.AuthModule.logged) { //seteamos el usuario que esta autenticado en cada peticion
         store.commit(authTypes.mutations.setUser);
     }
     next();
